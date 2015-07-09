@@ -1,0 +1,197 @@
+\documentclass{scrartcl}	% classe article di KOMA
+\reversemarginpar
+\newcommand{\MarginDate}[1]{\marginpar{\raggedleft\itshape\small#1}\\}
+\newcommand{\MarginDateb}[1]{\marginpar{\raggedleft\itshape\small#1}}
+%\usepackage[latin1]{inputenc}	% la codifica di input
+%\usepackage[T1]{fontenc}	% la codifica dei font
+\usepackage[LabelsAligned]{currvita}	% un buon pacchetto per CV
+\usepackage[nochapters]{classicthesis} % stile ClassicThesis
+\usepackage[a4paper, footskip=0.5cm, top=1.5cm, bottom=1.5cm, left=4cm, right=3cm]{geometry}
+\usepackage{url}	% per gli indirizzi Internet
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}}
+\renewcommand{\cvlistheadingfont}{\large}
+\renewcommand{\cvlabelfont}{\qquad}
+\setlength{\parindent}{-0.5cm}
+% PDF SETUP
+\usepackage{multicol}
+\usepackage{color} 
+\definecolor{myblue}{rgb}{0,0.2,0.4}
+\date{}
+% Setup hyperref package, and colours for links, text and headings
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage{hyperref} 		
+\hypersetup{	
+  colorlinks,
+  breaklinks,
+  urlcolor=myblue, 
+  linkcolor=myblue,
+  pdftitle={Robert Myhill - Curriculum Vitae},
+  pdfauthor={Robert Myhill}}
+\usepackage{eurosym}
+\usepackage{setspace}
+
+\newlength{\datebox}\settowidth{\datebox}{\today}
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+    \item[]
+  \end{list}}
+
+\newcommand{\NewWorkExperience}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\textit{#1}}\hspace{1.5em} #2 #3%
+\vspace{0.5em}\\}
+\newcommand{\Contact}[3]{\noindent\hangindent=0em\hangafter=0 \parbox{\datebox}{\textit{#1}}\hspace{1.5em} #2 #3\\}
+\newcommand{\SubHeading}[2]{\noindent\hangindent=2em\hangafter=0 #1 #2%
+\vspace{0.5em}\\}
+\newcommand{\Description}[1]{\noindent\hangindent=2em\hangafter=0\footnotesize{#1}\par\normalsize}
+\newcommand{\Heading}[1]{\hangindent=2em\hangafter=0\hspace{-0.25cm}\spacedlowsmallcaps{#1}\vspace{0.5em}\\}
+\newcommand{\Sep}{\hspace{1cm} \\}
+\begin{document}
+\thispagestyle{empty}
+\begin{cv}
+
+\begin{center}
+\setlength{\leftmargin}{2.5cm}
+\textsc{Curriculum Vitae}
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+\LARGE \textsc{Robert Myhill}
+\end{center}
+\vspace{8pt}
+\noindent Department of Earth Sciences \\
+University of Cambridge \\
+Bullard Laboratories \\
+Madingley Rise \\
+Cambridge, CB3 0EZ \\
+UK \\
+\hspace{1.5em}\\
+\Contact{phone}{+44 (0)7841 714164}{}
+\Contact{fax}{+44 (0)1223 360779}{}
+\Contact{email}{\href{mailto:rm438@cam.ac.uk}{rm438@cam.ac.uk}}{}
+%%\NewWorkExperience{\textsc{url}}{\href{http://www.esc.cam.ac.uk/people/research-students/bob-myhill}{http://www.esc.cam.ac.uk/people/research-students/bob-myhill}}\\ 
+
+
+\vspace{1.0em}
+\Heading{Education}
+\SubHeading{PhD \MarginDateb{Current}Research at}{the University of Cambridge\vspace{0.5em}\\\textit{The Mechanisms of Deep-Focus Earthquakes}}
+\Description{
+I am researching the causes of earthquakes occuring at depths greater than 300 km through an integrated analysis of seismic distributions, focal mechanisms and the pressure-temperature regimes within which these events occur. I will combine this analysis with geophysical modelling techniques to elucidate aspects of the interaction between subducting plates and the upper-lower mantle boundary.\\
+\emph{Advisors: Dan McKenzie and Keith Priestley}.
+}
+\Sep
+\Description{
+\textsc{MSci + BA} \MarginDateb{2004-2008} Peterhouse, University of Cambridge, Class of 2008. \\
+Natural Sciences (Physical; 4 years).\\
+Part III: First Class. 1/36 in Class (Geological Sciences).\\
+Part II: First Class. 1/39 in Class (Geological Sciences).\\
+Part IB: First Class (Maths, Stratigraphic Geology, Mineralogy, Petrology).\\
+Part IA: First Class (Geology, Maths, Physics, Chemistry).
+}
+
+
+
+\vspace{1.0em}
+\Heading{Selected grants and awards}
+\Description{
+The Kingsley Bye-Fellowship\MarginDateb{2010}, Magdalene College Cambridge.\\
+The Hugo\MarginDateb{2008} de Balsham Prize for Exceptional Academic Distinction.\\
+The Harkness Scholarship (first-placed Finalist in Geological Sciences, University of Cambridge).\\
+The Huppert Prize in Geophysics.\\
+The Henry Wilkinson Cookson Senior Scholarship \MarginDateb{2007} in Natural Sciences.\\
+The John Reekie Memorial Prize for the best geological fieldwork-based thesis submitted for the first degree at the Department of Earth Sciences.\\
+Peterhouse Junior and Senior Scholarships\MarginDateb{2005-2006}.\\
+Departmental Field Mapping Prizes \MarginDateb{2005-2007}\\ (5 prizes, from the Arran, Sedbergh, Dorset and Cornwall and Greece Field Trips).\\
+The George Watson Prize for Outstanding Scholarship \MarginDateb{2004}\\
+(Best results, Class of 2004, Sir John Leman High School).\\
+St. John Ambulance Grand Prior Award. \MarginDate{2003}
+}
+\vspace{1.0em}
+\Heading{Skills}
+\Description{
+\vspace{-1.5em}
+\begin{itemize}
+\item Competent user of \LaTeX, Microsoft and Serif Office programs.
+\item Experience of FORTRAN, C, C++ languages, and use of the OpenGL API.
+\item Experience in BASH and HTML scripting.
+\item Over 400 hours experience with THERMOCALC.
+\end{itemize}
+}
+
+\clearpage
+
+\vspace{1.0em}
+\Heading{Publications and presentations}
+\SubHeading{Peer-reviewed journal articles}{}
+\Description{
+R. Myhill, D. McKenzie, K. Priestley, \MarginDateb{2010} ``Clustering of deep-focus earthquakes in the southwest Pacific''. \\
+\emph{Submitted to Earth and Planetary Science Letters.}\\
+R. Myhill, \MarginDateb{2010} ``Constraints on evolution of the Mesohellenic Ophiolite from sub-ophiolitic metamorphic rocks''. \\
+\emph{Geological Society of America Special Publication, accepted.}\\
+A. Rassios, Y. Dilek, R. Myhill, D. Ghikas, A. Mpatsi, \MarginDateb{2010} ``Melange Formations beneath the Pindos Basin Ophiolites, Northern Greece: Evidence of an “active,” rapid decollement emplacement surface''. \\
+\emph{Geological Society of America Special Publication, accepted.}
+}
+
+\Sep
+\SubHeading{Presentations}{}
+\Description{
+``The search for structure: deep-focus earthquakes''. \MarginDateb{2010} \emph{Cambridge Earth Sciences Graduate Talk.}\\
+``Clustering of deep-focus \MarginDateb{2009} earthquakes in the southwest Pacific''. \emph{Poster presentation, American Geophysical Union Fall Meeting.}\\
+``Faulting 300 kilometers down: \MarginDateb{2009} The mystery of deep-focus earthquakes''. \emph{Magdalene Parlour Talk.}\\
+``Deep-focus earthquakes''. \emph{Bullard Laboratories Friday Talk.}\\
+``The significance of high temperature \MarginDateb{2008} low pressure rocks beneath the Mesohellenic Ophiolite''. \emph{Poster presentation, Institute of Geology and Mineral Exploration (IGME) Field Symposium.}\\
+IGME Field Symposium: Ophiolites 2008. \emph{Field demonstrator and member of the organising team.}\\
+K\"{o}ln undergraduate field trip to Greece. \emph{1-day invited field demonstrator.}
+}
+
+
+\vspace{1.0em}
+\Heading{Relevant Experience}
+\Description{
+Masters Thesis at the University of Cambridge: \MarginDateb{06/07-01/08} Metamorphic Development beneath the Mesohellenic Ophiolite. I obtained a high First (80\%) for this project.\\
+\emph{Advisor: Dr. Timothy Holland, University of Cambridge.}
+}
+\Sep
+\Description{
+Bachelors Thesis at the University of Cambridge. \MarginDateb{06/06-01/07} Independent mapping project and industrial work experience: Vourinos, Northern Greece. I obtained the top First in the year for this project (80\%).\\
+\emph{Advisors: Dr. Alan Smith, University of Cambridge and Dr. Anne Rassios, IGME.}
+}
+\Sep
+\Description{
+Field geologist, British Geological Survey. \MarginDateb{07/05-08/05} Paid appointment for the Tellus Project, part of a national environmental survey completed in 2006.\\
+\emph{Advisors: Louise Ander, Sean Quigley, Sophia Passmore (British Geological Survey).}
+}
+\Sep
+\Description{
+Supervisions \MarginDateb{2008-present}given in the following courses: \emph{Geology (IA), Hydrosphere (IB), Tectonics and Structural Geology (IB), Tectonics (II/III) and Revision and Essay Skills (IA/IB/II/III).}\\
+Demonstrated practicals for the following courses: \emph{Tectonics and Structural Geology (IB), Tectonics (II/III) and Seismology (II/III).}\\
+Field Demonstrator: \emph{Ketton (IA), Arran (IA), Sedbergh (IB)}.
+}
+\Sep
+\Description{
+250+ \MarginDateb{2005-present}days fieldwork experience (as of \today) as demonstrator, field guide, employee, researcher and student.\\
+\emph{(Locations include: Ireland, Iceland, Greece, Dorset, Cornwall, Sedbergh, and the Isles of Arran and Skye.)}
+}
+
+\vspace{1.0em}
+\Heading{Other interests}
+\Description{
+\vspace{-1.5em}
+\begin{itemize}
+\item First Aid: I am presently Duties Coordinator for Cambridge LINKS, the student division of St John Ambulance, having been a member since 1998.
+\item Magdalene College MCR: I am currently MCR Treasurer.
+\item Outreach: I volunteer for Time Truck (the student geological outreach organisation) and also SEEK (Science and Engineering Experiments for Kids).
+\item The Sedgwick Club (The University of Cambridge geological society): As an undergraduate I was president of this society, and I remain an active member.
+\item Foreign travel: I particularly enjoy my time in Greece, and spent my final year at undergraduate level learning Modern Greek at the Department of Medieval and Modern Languages.
+\end{itemize}
+}
+
+\enlargethispage{\baselineskip}
+\end{cv}
+\end{document}

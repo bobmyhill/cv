@@ -1,0 +1,244 @@
+\documentclass{scrartcl}	% classe article di KOMA
+\reversemarginpar
+\newcommand{\MarginDate}[1]{\marginpar{\raggedleft\itshape\small#1}\\}
+\newcommand{\MarginDateb}[1]{\marginpar{\raggedleft\itshape\small#1}}
+%\usepackage[latin1]{inputenc}	% la codifica di input
+%\usepackage[T1]{fontenc}	% la codifica dei font
+\usepackage[LabelsAligned]{currvita}	% un buon pacchetto per CV
+\usepackage[nochapters]{classicthesis} % stile ClassicThesis
+\usepackage[a4paper, footskip=0.5cm, top=2cm, bottom=2cm, left=5cm, right=5cm]{geometry}
+\usepackage{url}	% per gli indirizzi Internet
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}}
+\renewcommand{\cvlistheadingfont}{\large}
+\renewcommand{\cvlabelfont}{\qquad}
+\setlength{\parindent}{-0.5cm}
+% PDF SETUP
+\usepackage{multicol}
+\usepackage{color} 
+\definecolor{myblue}{rgb}{0,0.2,0.4}
+\date{}
+% Setup hyperref package, and colours for links, text and headings
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage{hyperref} 		
+\hypersetup{	
+  colorlinks,
+  breaklinks,
+  urlcolor=myblue, 
+  linkcolor=myblue,
+  pdftitle={Robert Myhill - Curriculum Vitae},
+  pdfauthor={Robert Myhill}}
+\usepackage{eurosym}
+\newlength{\datebox}\settowidth{\datebox}{\today}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+
+\newcommand{\NewWorkExperience}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\textit{#1}}\hspace{1.5em} #2 #3%
+\vspace{0.5em}\\}
+\newcommand{\SubHeading}[2]{\noindent\hangindent=2em\flushleft #1 #2%
+\vspace{0.5em}\\}
+\newcommand{\Description}[1]{\hangindent=2em\footnotesize{#1}\par\normalsize}
+\newcommand{\Heading}[1]{\hangindent=0em\flushleft\spacedlowsmallcaps{#1}}
+\newcommand{\Sep}{\vspace{2em}}
+\begin{document}
+\thispagestyle{empty}
+\begin{cv}
+
+\begin{center}
+\textsc{Curriculum Vitae}
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+\LARGE \textsc{Robert Myhill}
+\end{center}
+\vspace{8pt}
+\flushleft{Department of Earth Sciences} \\
+University of Cambridge \\
+Bullard Laboratories \\
+Madingley Rise \\
+Cambridge, CB3 0EZ \\
+UK \\
+
+\vspace{1.5em}
+\Heading{Contact Details}
+\vspace{0.5em}
+
+\NewWorkExperience{phone}{+44 (0)7841 714164}{}
+\NewWorkExperience{fax}{+44 (0)1223 360779}{}
+\NewWorkExperience{email}{\href{mailto:rm438@cam.ac.uk}{rm438@cam.ac.uk}}{}
+%%\NewWorkExperience{\textsc{url}}{\href{http://www.esc.cam.ac.uk/people/research-students/bob-myhill}{http://www.esc.cam.ac.uk/people/research-students/bob-myhill}}\\ 
+
+
+\vspace{1.5em}
+\Heading{Education}
+\vspace{0.5em}
+
+\NewWorkExperience{Current}{PhD Research Student at}{U. Cambridge}
+\Description{
+Researching \MarginDateb{The Mechanisms of Deep Focus Earthquakes} the causes of earthquakes at depths greater than 300 km through an integrated analysis of seismic distributions, focal mechanisms and \emph{P-T} regimes within which these events occur. I aim to combine this analysis with previous work to elucidate aspects of the interaction between subducting plates and the upper-lower mantle boundary.\\
+\emph{Advisors: Dan McKenzie and Keith Priestley}.
+}
+\Sep
+
+\Description{
+\textsc{MSci + BA} \MarginDateb{2004-2008} Peterhouse, University of Cambridge, Class of 2008. \\
+Natural Sciences (Physical; 4 years).\\
+Part III: First Class. 1/36 in Class (Geological Sciences).\\
+Part II: First Class. 1/39 in Class (Geological Sciences).\\
+Part IB: First Class (Maths, Stratigraphic Geology, Mineralogy, Petrology).\\
+Part IA: First Class (Geology, Maths, Physics, Chemistry).
+}
+
+
+
+\vspace{1.5em}
+\Heading{Selected grants and awards}
+\vspace{0.5em}
+
+\Description{
+The \MarginDateb{2008} Hugo de Balsham Prize for Exceptional Academic Distinction.\\
+The Harkness Scholarship (first-placed Finalist in Geological Sciences, Cambridge University).\\
+The Huppert Prize in Geophysics.\\
+The Henry Wilkinson Cookson Senior Scholarship \MarginDateb{2007} in Natural Sciences.\\
+The John Reekie Memorial Prize for the best geological fieldwork-based thesis submitted for the first degree at the Department of Earth Sciences.\\
+Peterhouse College Prizes and Scholarships \MarginDateb{2005-2008}.\\
+Departmental Field Mapping Prizes \MarginDateb{2004-2007}\\ (Arran, Sedbergh, Dorset and Cornwall, Greece).\\
+St. John Ambulance Grand Prior Award. \MarginDate{2003}
+}
+
+\clearpage
+\vspace{1.5em}
+\Heading{Publications and presentations}
+\vspace{0.5em}
+
+
+\SubHeading{Peer-reviewed journal articles}{}
+\Description{
+R. Myhill, D. McKenzie, K. Priestley, \MarginDateb{2010} ``Clustering of deep focus earthquakes in the southwest Pacific''. \\
+\emph{Submitted to EPSL.}\\
+R. Myhill, \MarginDateb{2008} ``Constraints on evolution of the Mesohellenic Ophiolite from sub-ophiolitic metamorphic rocks''. \\
+\emph{GSA Special Publication, accepted.}\\
+A. Rassios, Y. Dilek, R. Myhill, D. Ghikas, A. Mpatsi, \MarginDateb{2008} ``Melange Formations beneath the Pindos Basin Ophiolites, Northern Greece: Evidence of an “active,” rapid decollement emplacement surface''. \\
+\emph{GSA Special Publication, accepted.}
+}
+
+\Sep
+
+\SubHeading{Presentations}{}
+\Description{
+``Clustering of deep focus \MarginDateb{2009} earthquakes in the southwest Pacific''. \emph{Poster presentation, AGU Fall Meeting.}\\
+``Faulting 300 kilometers down: \MarginDateb{2009} The mystery of deep focus earthquakes''. \emph{Magdalene Parlour Talk.}\\
+``Deep focus earthquakes''. \emph{First year PhD presentation.}\\
+``The significance of high temperature \MarginDateb{2008} low pressure rocks beneath the Mesohellenic Ophiolite''. \emph{Poster presentation, IGME Field Symposium: Ophiolites 2008.}\\
+IGME Field Symposium: Ophiolites 2008. \emph{Field Guide.}\\
+K\"{o}ln undergraduate field trip to Greece. \emph{1-day Guest Field Guide.}
+}
+
+
+\vspace{1.5em}
+\Heading{Relevant Experience}
+\vspace{0.5em}
+
+
+\Description{
+Masters Thesis at U. Cambridge. \MarginDateb{06/07-01/08} Metamorphic Development beneath the Mesohellenic Ophiolite. I obtained a high First (80\%) for this project.\\
+\emph{Advisor: Dr. Timothy Holland, Cambridge University.}\\
+}
+
+\Description{
+Bachelors Thesis at U. Cambridge. \MarginDateb{06/06-01/07} Independent mapping project and industrial work experience: Vourinos, Northern Greece. I obtained the top First in the year for this project (80\%).\\
+\emph{Advisors: Dr. Alan Smith, Cambridge University and Dr. Anne Rassios, Greek Institute of Geology and Mineral Exploration (IGME).}
+}
+
+\Description{
+Voluntary Worker, British Geological Survey. \MarginDateb{07/05-08/05} Paid appointment for part of a national environmental survey (The Tellus Project) completed in 2006.\\
+\emph{Advisors: Louise Ander, Sean Quigley, Sophia Passmore (British Geological Survey).}
+}
+
+\Description{
+Supervisions \MarginDateb{2008-present}given in the following courses: \emph{IA Geology; IB Hydrosphere, Tectonics and Structural Geology; II/III Essay Skills.}\\
+Demonstrated in the following courses: \emph{IB Tectonics and Structural Geology; II/III Tectonics, Seismology (partial).}\\
+Field Demonstrator: \emph{Ketton (IA), Arran (IA), Sedbergh (IB)}.\\
+}
+
+\Description{
+250+ \MarginDateb{2005-present}days fieldwork experience (as of 01/10/09) as demonstrator, field guide, employee, researcher and student.\\
+\emph{(Locations include: Ireland, Iceland, Greece, Dorset, Cornwall, Sedbergh, and the Isles of Arran and Skye.)}
+}
+
+\clearpage
+\vspace{1.5em}
+\Heading{Other Experience}
+\vspace{0.5em}
+
+\Description{
+Treasurer, \MarginDateb{2010-2011} Magdalene Middle Common Room.\\
+Duties Coordinator, Cambridge LINKS (St. John Ambulance).\\
+Vice President and President; \MarginDateb{2006-2008} Sedgwick Club (Geological Society of the University of Cambridge).\\
+Divisional Secretary, Chairman and Treasurer; \MarginDateb{2005-2008} Cambridge University Association Football League.\\
+Time Truck \MarginDateb{2006-2007} (Cambridge Geological Outreach) Committee Member.\\
+Volunteer \MarginDateb{2005-present} for Time Truck.\\
+Team Member of Science and Engineering Experiments for Kids, Cambridge: Science Outreach for local schools.\\
+}
+
+\vspace{1.5em}
+\Heading{Skills}
+\vspace{0.5em}
+
+\Description{
+\begin{itemize}
+\item Competent user of \LaTeX, Microsoft and Serif Office programs and basic knowledge of Access.
+\item Experience of FORTRAN, C, C++ languages, BASH and HTML scripting and use of the OpenGL API.
+\item Over 300 hours experience with THERMOCALC (a thermobarometry program based on Gibbs Energy minimisation).
+\item First Aider with St John Ambulance (First Aid at Work expires 12/2012).
+\item Basic Training in Manual Handling, Radio Communication, Fire Safety.
+\end{itemize}
+}
+
+\vspace{1.5em}
+\Description{Geology\ \ $\cdotp$\ \ Music\ \ $\cdotp$\ \ First Aid\ \ $\cdotp$\ \  Programming\ \ $\cdotp$\ \  Foreign Travel\ \ $\cdotp$\ \  Greek\MarginDate{Interests}}
+
+\vspace{1.5em}
+\Heading{Referees}
+
+\Description{
+\begin{multicols}{2}{
+PhD project supervisor\\
+Prof. Dan McKenzie\\
+Bullard Laboratories,\\
+University of Cambridge,\\
+Madingley Rise,\\
+Cambridge.\\
+CB3 0EZ.\\
+UNITED KINGDOM.\\
+\texttt{+44 (0)1223 337191}\\
+\href{mailto:mckenzie@madingley.org}{mckenzie@madingley.org}.\\
+\columnbreak
+Part III project supervisor\\
+Dr. Timothy Holland\\
+Dept. of Earth Sciences,\\
+University of Cambridge,\\
+Downing Street,\\
+Cambridge.\\
+CB2 3EQ.\\
+UNITED KINGDOM.\\
+\texttt{+44 (0)1223 333453}\\
+\href{mailto:tjbh@esc.cam.ac.uk}{tjbh@esc.cam.ac.uk}.\\
+}
+\end{multicols}
+}
+
+\vfill
+
+% FILL IN THE FULL URL TO YOUR CV
+\begin{center}
+{\footnotesize \href{http://www.srcf.ucam.org/~rm438/files/CV.pdf}{http://www.srcf.ucam.org/$\sim$rm438/files/CV.pdf}\\
+Last updated: \today}
+\end{center}
+
+
+
+\enlargethispage{\baselineskip}
+\end{cv}
+\end{document}

@@ -1,0 +1,131 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.80, top=1.5cm, bottom=1.0cm]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\maketitlenamewidth}{10cm}        % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{doi:#1}}
+
+% personal data
+\firstname{Robert}
+\familyname{Myhill}
+\title{Curriculum Vitae}               % optional, remove the line if not wanted
+\address{5 Wash Lane, Kessingland}{Suffolk, NR33 7QZ, UK}    % optional, remove the line if not wanted
+\mobile{+44~(7841)~614~164}                  % optional, remove the line if not wanted
+\phone{+44~(1223)~337~182}
+\fax{+44~(1223)~360~779}                      % optional, remove the line if not wanted
+\email{myhill.bob@gmail.com}                          % optional, remove the line if not wanted
+\photo[64pt][0.4pt]{photo/photo}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Personal Information}
+\cvitem{Full Name}{Robert Christopher Myhill}
+\cvitem{Date of birth}{16 March 1986}
+\cvitem{Place of Birth}{Gorleston, Norfolk, UK}
+\cvitem{Nationality}{British}
+
+\section{Education}
+\cventry{2008--2012}{PhD in Earth Sciences}{Magdalene College}{University of Cambridge}{}{\textbf{The Mechanisms of Deep Earthquakes}\\ In this thesis, I conducted a study of earthquakes occurring at depths greater than 60 km through an integrated analysis of seismic distributions, focal mechanisms and conditions within subducting slabs. \emph{Advisors: Professors Dan McKenzie and Keith Priestley}.}  % arguments 3 to 6 can be left empty
+\cventry{2004--2008}{MSci + BA}{Peterhouse}{University of Cambridge}{\textit{First Class}}{\textbf{Natural Sciences (Physical; 4 years})
+\begin{itemize}
+\item Part III: First Class. 1/36 in Class (Geological Sciences).
+\item Part II: First Class. 1/39 in Class (Geological Sciences).
+\item Part IB: First Class (Maths, Stratigraphic Geology, Mineralogy, Petrology).
+\item Part IA: First Class (Geology, Maths, Physics, Chemistry).
+\end{itemize}}
+
+\section{Selected Grants and Awards}
+\cvitem{2011}{Outstanding Student Poster Award, Geodynamics Division (European Geophysical Union General Assembly).}
+\cvitem{2010}{The Kingsley Bye-Fellowship. Magdalene College, Cambridge.}
+\cvitem{2008}{The Hugo de Balsham Prize for Exceptional Academic Distinction. Peterhouse, Cambridge.}
+\cvitem{}{The Harkness Scholarship (first-placed Finalist in Geological Sciences, University of Cambridge).}
+%\cvitem{}{The Huppert Prize in Geophysics}{}
+\cvitem{2007}{The Henry Wilkinson Cookson Senior Scholarship in Natural Sciences, University of Cambridge.}
+\cvitem{}{The John Reekie Memorial Prize for the best geological fieldwork-based thesis submitted for the first degree at the Department of Earth Sciences, University of Cambridge.}
+%\cvitem{2005-2006}{Peterhouse Junior and Senior Scholarships.}{}
+%\cvitem{2005-2007}{Departmental Field Mapping Prizes}{(5 prizes, from the Arran, Sedbergh, Dorset and Cornwall and Greece Field Trips).}
+\cvitem{2004}{The George Watson Prize for Outstanding Scholarship (Best results, Class of 2004, Sir John Leman High School).}
+%\cvitem{2003}{St John Ambulance Grand Prior Award.}{}
+
+\section{Skills}
+\cvitem{}{\begin{itemize}
+\item Competent user of \href{http://www.latex-project.org/}{\LaTeX}, Microsoft and Serif Office programs.
+\item Experience of FORTRAN, C, C++, Python programming languages, and basic use of the OpenGL API.
+\item Experience in BASH and HTML scripting.
+\item Over 400 hours experience with \href{http:www.metamorph.geo.unimainz.de/thermocalc/}{THERMOCALC}, and a competent user of \href{http:www.perplex.ethz.ch/}{Perple\_X} thermodynamic software.
+\item Experience of \href{http:www.fenicsproject.org/}{FEniCS} finite element modelling software.
+\end{itemize}}
+
+\clearpage
+\section{Publications and presentations}
+\subsection{Peer-reviewed journal articles}
+\cvitem{2012}{Myhill, R. and Warren, L. M. Fault plane orientations of deep earthquakes in the Izu-Bonin-Marianas subduction zone, Journal of Geophysical Research, 117:B06307, \doi{10.1029/2011JB009047}.}
+\cvitem{2011}{Myhill, R., McKenzie, D. and Priestley, K. The distribution of earthquake multiplets beneath the southwest Pacific, Earth and Planetary Science Letters, 301:87--97, \doi{10.1016/j.epsl.2010.10.023}.}
+\cvitem{2011}{Myhill, R. Constraints on evolution of the Mesohellenic Ophiolite from sub-ophiolitic metamorphic rocks, in Wakabayashi, J., and Dilek, Y., eds., M\'elanges: Processes of Formation and Societal Significance: Geological Society of America Special Paper 480:1--20, \doi{10.1130/2011.2480(03)}.}
+
+\subsection{Selected Presentations}
+\cvitem{2011}{Fault plane orientations of deep earthquakes in the Izu-Bonin-Marianas subduction zone. Oral presentation, American Geophysical Union Fall Meeting.}
+\cvitem{2011}{Insights into deep earthquake mechanics. Invited talk, Bayerisches GeoInstitute.}
+\cvitem{2011}{Earthquake distributions and their relationship with structural, chemical and thermobaric heterogeneities in subducting slabs. Poster presentation, European Geophysical Union General Assembly.}
+\cvitem{2011}{Deep earthquakes: Observations and controls of seismic deformation in subducting slabs. Bullard Laboratories Friday Seminar.}
+\cvitem{2010}{The search for structure: deep-focus earthquakes. Cambridge Earth Sciences Graduate Seminar.}
+\cvitem{2009}{Clustering of deep-focus earthquakes in the southwest Pacific. Poster presentation, American Geophysical Union Fall Meeting.}
+\cvitem{2009}{Faulting 300 kilometers down: The mystery of deep-focus earthquakes. Magdalene College Parlour Talk.}
+\cvitem{2008}{The significance of high temperature low pressure rocks beneath the Mesohellenic Ophiolite. Poster presentation, Greek Institute of Geology and Mineral Exploration (IGME) Field Symposium.}
+
+\section{Relevant Experience}
+\cvitem{06/07-01/08}{Master's Thesis, University of Cambridge. Metamorphic Development beneath the Mesohellenic Ophiolite. In this self-designed project, I used \href{http:www.metamorph.geo.unimainz.de/thermocalc/}{THERMOCALC} to interpret the mineral assemblages in samples collected from the amphibolite-granulite facies metamorphic soles of the Mesohellenic Ophiolite in Northern Greece. I obtained a high First (80\%) for this project. \emph{Advisor: Dr Timothy Holland, University of Cambridge}.}
+\cvitem{06/06-01/07}{Bachelor's Thesis, University of Cambridge. Independent mapping project and industrial work experience: Vourinos, Northern Greece. I obtained the top First in the year for this project (80\%). \emph{Advisors: Dr Alan Smith, University of Cambridge and Dr Anne Rassios, IGME}.}
+\cvitem{07/05-08/05}{Field geologist, British Geological Survey. Paid appointment for the Tellus Project, part of a national environmental survey completed in 06. \emph{Advisors: Louise Ander, Sean Quigley, Sophia Passmore (British Geological Survey)}.}
+\cvitem{09/08}{Field demonstrator and member of the organising team, IGME Field Symposium: Ophiolites 2008.}
+\cvitem{2008--2012}{Supervisor in Stratigraphy, Structural Geology, Hydrosphere and Tectonics, University of Cambridge.}
+\cvitem{}{Demonstrator in Structural Geology, Tectonics and Seismology, University of Cambridge.}
+\cvitem{}{Demonstrator on Earth Sciences departmental field trips to Ketton, Arran, and Sedbergh.}
+%\cvitem{}{Guest field guide, University of K\"{o}ln}{}{Vourinos Ophiolite, Northern Greece}
+\cvitem{2005--2012}{Fieldwork experience. 250+ days (as of \today) as demonstrator, field guide, employee, researcher and student (Locations around the UK, Iceland and Greece).}
+
+\section{Other Interests}
+\cvitem{}{\begin{itemize}
+\item First Aid: I am an active member of Cambridge LINKS, the student division of St John Ambulance, having been Duties Coordinator 2010-2012, Stores Manager 2011-2012 and a member of St John Ambulance since 1998.
+\item Outreach: I volunteer for Time Truck (the student geological outreach organisation) and also SEEK (Science and Engineering Experiments for Kids).
+\item The Sedgwick Club (The University of Cambridge geological society): As an undergraduate I was president of this society, and I remain an active member.
+\item Foreign travel: I have enjoyed 6 months over the past 5 years conducting fieldwork in Greece, and spent my final year at undergraduate level studying Modern Greek at the Department of Medieval and Modern Languages, University of Cambridge.
+\end{itemize}
+}
+
+\clearpage
+\end{document}
