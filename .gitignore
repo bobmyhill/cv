@@ -1,3 +1,6 @@
+## Specific files
+old_cvs
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
