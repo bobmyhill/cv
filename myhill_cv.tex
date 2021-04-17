@@ -1,193 +1,292 @@
-%% start of file `template.tex'.
-%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License version 1.3c,
-% available at http://www.latex-project.org/lppl/.
-
-
-\documentclass[10pt,a4paper,sans]{templates/moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-
-% moderncv themes
-\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{myhill}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
-
-% character encoding
-%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
-% adjust the page margins
-\usepackage[scale=0.80, top=1.5cm, bottom=1.0cm]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
-%\setlength{\maketitlenamewidth}{10cm}        % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
-
-\usepackage{enumitem}
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{titling}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{array}
+\usepackage[version=4]{mhchem}
 
 \newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{doi:#1}}
 
-% personal data
-\firstname{Robert}
-\familyname{Myhill}
-\title{Postdoctoral Research Fellow}      % optional, remove the line if not wanted
-\address{School of Earth Sciences}{University of Bristol}{BS8 1RJ, UK}    % optional, remove the line if not wanted
-\mobile{+44-(0)~778~334~2237}                  % optional, remove the line if not wanted
-\phone{+44-(0)~117~954~5400}
-\fax{+44-(0)~117~954~5420}                      % optional, remove the line if not wanted
-\email{bob.myhill@bristol.ac.uk}                          % optional, remove the line if not wanted
-\photo[64pt][0.4pt]{photo/photo}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
+% color
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\definecolor{color1}{rgb}{0.0,0.56,0.35}
+\usepackage{sectsty}
+\allsectionsfont{\color{color1}\normalfont}
 
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
+% automatic loading of latin modern fonts if present on the system
+\IfFileExists{lmodern.sty}
+  {\RequirePackage[T1]{fontenc}\RequirePackage{lmodern}}
+  {}
+
+% symbols like \Telefon, \Mobilefone, \Letter and \Email
+\RequirePackage{marvosym}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\posttitle{\par\end{center}}
+\predate{}
+\postdate{}
+\date{}
+\preauthor{\begin{center}}
+\postauthor{\par\end{center}\vspace{-0.5em}}
+\setlength{\droptitle}{-60pt}
+
+%   other symbols
+\newcommand*{\listitemsymbol}{\labelitemi~}
+\newcommand*{\addresssymbol}{}
+\newcommand*{\mobilesymbol}{\Mobilefone~}
+\newcommand*{\phonesymbol}{\Telefon~}
+\newcommand*{\faxsymbol}{\FAX~}
+\newcommand*{\emailsymbol}{\Letter~}
+\newcommand*{\homepagesymbol}{{\Large\ComputerMouse}~}
+
+
+\title{}
+
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
-%-----       resume       ---------------------------------------------------------
-\makecvtitle
 
-\section{Personal Information}
-\cvitem{Full Name}{Robert Christopher Myhill}
-\cvitem{Date of birth}{16 March 1986}
-\cvitem{Place of Birth}{Gorleston, Norfolk, UK}
-\cvitem{Nationality}{British}
-%\cvitem{Address}{Emil-Warburg-Weg 36, 95447 Bayreuth, Germany} 
+%\maketitle
 
-\section{Employment}
-\cventry{2017-2020}{UK Space Agency Postdoctoral Research Fellow}{}{University of Bristol}{}{The thermochemical state and evolution of Mars' deep interior}
-\cventry{2016-2017}{Postdoctoral Research Associate}{School of Earth Sciences}{University of Bristol}{}{Preparation for the InSight Mission to Mars}
-\cventry{2015}{Postdoctoral Researcher}{Bayerisches Geoinstitut}{University of Bayreuth}{}{Thermodynamics of light element incorporation into metallic melts and differentiation of the terrestrial planets}
-\cventry{2013-2014}{Humboldt Postdoctoral Fellow}{Bayerisches Geoinstitut}{University of Bayreuth}{}{Phase compositions and melting relations of hydrous and ferric-rich phases}
-\cventry{2012}{Visiting Scientist}{Bayerisches Geoinstitut}{University of Bayreuth}{}{High pressure volatile-rich melting}
+\vspace{-5em}
 
-\section{Education}
-\cventry{2008--2012}{PhD in Earth Sciences}{Magdalene College}{University of Cambridge}{}{The Mechanisms of Deep Earthquakes \emph{Advisors: Professors Dan McKenzie and Keith Priestley}.}  % arguments 3 to 6 can be left empty
-\cventry{2004--2008}{MSci + BA}{Peterhouse}{University of Cambridge}{\textit{First Class}}{\textbf{Natural Sciences (Physical; 4 years})
-\begin{itemize}
-\item Part III: First Class. 1/36 in Class (Geological Sciences).
-\item Part II: First Class. 1/39 in Class (Geological Sciences).
-\item Part IB: First Class (Maths, Stratigraphic Geology, Mineralogy, Petrology).
-\item Part IA: First Class (Geology, Maths, Physics, Chemistry).
-\end{itemize}}
+\begin{center}
+\begin{minipage}[b]{0.53\textwidth}
+  \raggedright
+  \Huge{Robert Myhill} \par
+  \LARGE{\color{color1} Postdoctoral Researcher} \par
+  \vspace{0.5em}
+\end{minipage}%
+\begin{minipage}[b]{0.33\textwidth}
+  \raggedleft
+  \scriptsize \it \color{gray}
+  School of Earth Sciences, \\
+  University of Bristol, \\
+  BS8 1RJ, UK\\
+  \phonesymbol +44 (0) 117 33 15141 \\
+  \mobilesymbol +44 (0) 778 334 2237 \\
+  \emailsymbol \href{mailto:bob.myhill@bristol.ac.uk}{bob.myhill@bristol.ac.uk} \\
+  \homepagesymbol \url{https://bobmyhill.github.io}\\
+\end{minipage}%
+\begin{minipage}[b]{0.02\textwidth}
+  \raggedleft \textcolor{white}{.}
+\end{minipage}%
+\begin{minipage}[b]{0.12\textwidth}
+  \raggedleft
+      {%
+        \color{color1}
+        \setlength{\fboxsep}{1.pt}%
+        \setlength{\fboxrule}{0.8pt}%
+        \fbox{\includegraphics[width=\linewidth]{photo/photo}}%
+      }%
+\end{minipage}
+\end{center}
 
-\section{Selected Grants and Awards}
-\cvitem{2017}{UK Space Agency Aurora Postdoctoral Fellowship (2017-2020; 302k GBP over three years).}
-\cvitem{2012}{Alexander von Humboldt Research Fellowship for Postdoctoral Researchers (2013-2014).}
-\cvitem{2011}{Outstanding Student Poster Award, Geodynamics Division (European Geophysical Union General Assembly).}
-\cvitem{2010}{The Kingsley Bye-Fellowship. Magdalene College, Cambridge.}
-\cvitem{2008}{The Hugo de Balsham Prize for Exceptional Academic Distinction. Peterhouse, Cambridge.}
-\cvitem{}{The Harkness Scholarship (first-placed Finalist in Geological Sciences, University of Cambridge).}
-\cvitem{}{The Huppert Prize in Geophysics}{}
-\cvitem{2007}{The Henry Wilkinson Cookson Senior Scholarship in Natural Sciences, University of Cambridge.}
-\cvitem{}{The John Reekie Memorial Prize for the best geological fieldwork-based thesis submitted for the first degree at the Department of Earth Sciences, University of Cambridge.}
-%\cvitem{2005-2006}{Peterhouse Junior and Senior Scholarships.}{}
-%\cvitem{2005-2007}{Departmental Field Mapping Prizes}{(5 prizes, from the Arran, Sedbergh, Dorset and Cornwall and Greece Field Trips).}
-\cvitem{2004}{The George Watson Prize for Outstanding Scholarship (Best results, Class of 2004, Sir John Leman High School).}
-%\cvitem{2003}{St John Ambulance Grand Prior Award.}{}
+
+\vspace{0.2em}
+
+\subsection*{PROFESSIONAL EXPERIENCE}
+\vspace{-0.5em}
+\begin{table}[!h]
+\centering
+\begin{tabular}{L{2cm} L{10.5cm} L{4.5cm}}
+2021-present & NERC Large Grant Co-Researcher Investigator \newline \emph{Mantle Convection Constrained} & University of Bristol \vfill \\
+2017-2021 & UK Space Agency Postdoctoral Research Fellow \newline \emph{The thermochemical state and evolution of Mars' deep interior} & University of Bristol \vfill \\
+2016 \vfill & Postdoctoral Research Associate \newline \emph{Preparation for the InSight Mission} & University of Bristol \vfill \\
+2015 \vfill & Postdoctoral Researcher \newline \emph{Thermodynamics of core formation} & Bayerisches Geoinstitut \vfill \\
+2013-2014 \vfill & Alexander von Humboldt Research Fellow \newline \emph{High pressure experimental petrology} & Bayerisches Geoinstitut \vfill \\
+2012 \vfill & Visiting Scientist \newline \emph{High pressure experimental petrology} & Bayerisches Geoinstitut \vfill
+\end{tabular}
+\end{table}
+\vspace{-1.5em}
+
+\subsection*{EDUCATION}
+\vspace{-0.5em}
+\begin{table}[!h]
+\centering
+\begin{tabular}{L{2cm} L{10.5cm} L{4.5cm}}
+2012 \vfill & PhD Geophysics \newline \emph{The Mechanisms of Deep Earthquakes} & University of Cambridge\vfill \\
+2008 \vfill & MSci Natural Sciences (1/32 in class) \newline \emph{Earth Sciences} & University of Cambridge \vfill\\
+2007 \vfill & MA Natural Sciences (1/36 in class) \newline \emph{Geology (plus Physics, Maths and Chemistry)} & University of Cambridge \vfill
+\end{tabular}
+\end{table}
+\vspace{-1.5em}
+
+\subsection*{SELECTED HONOURS AND AWARDS}
+
+\vspace{-0.5em}
+\begin{table}[!h]
+\centering
+\begin{tabular}{L{2cm} L{13cm} L{2cm}}
+2017-2020 & UK Space Agency Aurora Postdoctoral Fellowship (302k GBP) & \\
+2013-2014 & Alexander von Humboldt Research Fellowship for Postdoctoral Researchers & \\
+2011 & Outstanding Student Poster Award, Geodynamics Division (European Geophysical Union General Assembly) & \\
+2010 & The Kingsley Bye-Fellowship. Magdalene College, Cambridge & \\
+2008 & The Hugo de Balsham Prize for Exceptional Academic Distinction & \\
+ & The Harkness Scholarship (first-placed Finalist in Geological Sciences, University of Cambridge) & \\
+ & The Huppert Prize in Geophysics &  \\
+2007 & The Henry Wilkinson Cookson Senior Scholarship in Natural Sciences &
+\end{tabular}
+\end{table}
+\vspace{-1.5em}
 
 \clearpage
+\subsection*{TEACHING EXPERIENCE}
+\vspace{-0.5em}
+\begin{table}[!h]
+\centering
+\begin{tabular}{L{2cm} L{13cm} L{2cm}}
+  2019--2020 & Lecturer in \emph{Non-Renewable Resources} (University of Bristol) & \\
+  2019 & Organiser, Avon Gorge Field Trip (University of Bristol) &\\
+  2018 & Field demonstrator, Arran Field Trip (University of Bristol) & \\
+  2017 \vfill & Guest lecturer on the subjects of \emph{high pressure melting} and the \emph{InSight Mission} (USTC, China) & \\
+  2017-2018 & Guest lecturer on \emph{subduction} and \emph{Mars exploration} (University of Bristol) & \\
+  2016-2018 & Field demonstrator, Avon Gorge Field Trip (University of Bristol) & \\
+  2008-2011 & Field demonstrator, Sedbergh Field Trip (University of Cambridge) & \\
+  2009 & Field demonstrator, Arran Field Trip (University of Cambridge) &
+\end{tabular}
+\end{table}
+\vspace{-1.5em}
 
-\section{Peer-reviewed publications}
-\subsection{In preparation}
-%\cvitem{2018}{Myhill, R., Teanby, N. and Wookey, J., Seismic diagnostics for the interior chemistry of Mars: guides for the InSight Mission, in prep.}
-\cvitem{2018}{Myhill, R. et al., BurnMan 1.0: A Planetary Geophysics Toolkit, in prep.}
-\cvitem{2018}{Myhill, R. and Beyer, C., A thermodynamic model for the incorporation of ferric iron in high pressure garnets, in prep.}
-\cvitem{2018}{Myhill, R. et al., Redox reactions in Mars' deep mantle and the extent of core-mantle equilibration, in prep.}
-\cvitem{2018}{Gassm{\"o}ller et al., On Formulations of Compressible Mantle Convection, in prep. for Geophysical Journal International}
-\cvitem{2018}{Myhill, R., Linear algebra in metamorphic petrology: Phase compositions, solutions and thermodynamic equilibria, in prep. for Geochimica et Cosmochimica Acta}
+\subsection*{SKILLS}
+\begin{itemize}
+\item Postdoctoral experience in high pressure experimental petrology on melts, silicate and oxide phases, using piston cylinder and multi-anvil apparatus.
+\item Analytical experience includes EPMA, SEM, XRD, M\"ossbauer, Raman and ERDA techniques.
+\item Fluent in the Python programming language. Competent in C++, BASH and HTML scripting. Basic knowledge of FORTRAN and the OpenGL API.
+\item Over 400 hours experience with \href{http:www.metamorph.geo.unimainz.de/thermocalc/}{THERMOCALC}, and a competent user of \href{http:www.perplex.ethz.ch/}{Perple\_X} thermodynamic software.
+\item Competent user of \href{http://www.latex-project.org/}{\LaTeX}, Microsoft and Serif Office programs.
+\item Experience in waveform modelling, including receiver function construction, directivity and focal mechanism analysis and relocation routines.
+\end{itemize}
+
+\subsection*{SELECTED COMMUNITY ROLES}
+\begin{itemize}
+\item Session convener at AGU Fall Meeting on seismology (2012), mineral physics (2015) and planetary sciences (2016).
+\item Reviewer for \emph{American Mineralogist}, \emph{Contributions to Mineralogy and Petrology}, \emph{Earth and Planetary Science Letters}, \emph{G-cubed}, \emph{GeoResJ}, \emph{Minerals}, \emph{Science Advances}, \emph{SoftwareX} and \emph{Solid Earth}, amongst others. %\emph{The Journal of Mineralogical and Petrological Sciences}.
+\item Chapter editor for Geochemical Perspectives.
+\item Co-editor for a special volume of the Geological Society of Greece on ``Tethyan Tectonics and Greek Ophiolites'', in honour of Alan Smith.
+\item Software maintainer and lead developer for \emph{burnman}, an open-source mineral physics toolkit written in python (\url{http://geodynamics.org/cig/software/burnman/}).
+\item Principal developer for \emph{ASPECT}, open-source software for mantle convection written in C++ (\url{http://geodynamics.org/cig/software/aspect/}).
+\item Code contributor to the open-source thermodynamics portal ENKI \\(\url{http://enki-portal.org/}).
+\item Scientific advisor to Geopark Grevena-Kozani, Northern Greece.
+\end{itemize}
+
+\clearpage
+\subsection*{PUBLICATIONS}
+\subsubsection*{In preparation}
+\small \sloppy
+\begin{enumerate}
+\item Myhill, R., Cottaar, S. et al., BurnMan 1.0: A Planetary Thermodynamics and Geophysics Toolkit.
+\item Myhill, R., Dannberg, J. et al., The dynamics of hydrous melting around the mantle transition zone.
+\item Myhill, R., Siersch, N. et al., Water-rich aluminous post-stishovite: implications for water and low seismic velocities in the lower mantle.
+\item Myhill, R. and Beyer, C., Optimal thermodynamic dataset creation applied to the Fe-Mg-Si-O system.
+\item Myhill, R. et al., A retrospective on the causes on Martian seismicity.
 %\cvitem{2018}{Myhill, R., Rubie, D. and Frost, D. J., Partitioning between silicate and metal melts; a model for core formation, in prep.}
 %\cvitem{2018}{Myhill, R. et al., Quenchable water-rich aluminous post-stishovite, and implications for water cycling and seismic scatterers in the lower mantle, American Mineralogist, in prep.}
-\subsection{Submitted and accepted}
-\cvitem{2018}{Ishii, T. et al., An extremely narrow binary post-spinel transition explains the sharp 660-km discontinuity, submitted to Nature.}
-\cvitem{2018}{Zhang, H., Wang, F. and Myhill, R., High-resolution seismic imaging of slab morphology and deformation beneath Izu-Bonin, Nature Communications, in revision.}
-\cvitem{2018}{Smrekar, S. et al., Pre-Mission InSights on the Interior of Mars, Space Science Reviews, accepted.}
-\subsection{Published}
-\cvitem{2018}{Murdoch, N. et al., Flexible mode modelling of the InSight lander and consequences for the SEIS instrument, Space Science Reviews (in press)}
-\cvitem{2018}{Myhill, R. et al., Frequency dependence of seismic attenuation and coupling through Mars' regolith: implications for the InSight Mission, Space Science Reviews, 214:85 \doi{10.1007/s11214-018-0514-5}.}
-\cvitem{2018}{Myhill, R., The elastic solid solution model for minerals at high pressures and temperatures, Contributions to Mineralogy and Petrology, 173:12 \doi{10.1007/s00410-017-1436-z}.}
-\cvitem{2018}{Beyer, C. et al., An internally consistent pressure calibration of geobarometers applicable to the Earth's upper mantle using in situ XRD, Geochimica et Cosmochimica Acta, 222:421--435, \doi{10.1016/j.gca.2017.10.031}.}
-\cvitem{2017}{Teanby, N. et al., Seismic Coupling of Short-Period Wind Noise Through Mars' Regolith for NASA's InSight Lander, Space Science Reviews, 211:485--500, \doi{10.1007/s11214-016-0310-z}.}
-\cvitem{2017}{Dannberg, J. et al., The importance of grain size to mantle dynamics and seismological observations, G-cubed, 18.8:3034--3061, \doi{10.1002/2017GC006944}.}
-\cvitem{2017}{Baron, M.A. et al., Experimental constraints on melting temperatures in the MgO-SiO$_2$ system at lower mantle pressures, Earth and Planetary Science Letters, 472:186--196, \doi{10.1016/j.epsl.2017.05.020}.}
-\cvitem{2017}{Novella, D. et al., Melting phase relations in the systems Mg$_2$SiO$_4$-H$_2$O and MgSiO$_3$-H$_2$O at upper mantle conditions, Geochimica et Cosmochimica Acta, 204:68--82, \doi{10.1016/j.gca.2016.12.042}.}
-\cvitem{2017}{Myhill, R. et al. Hydrous melting and partitioning in and above the mantle transition zone: insights from water-rich MgO-SiO$_2$-H$_2$O experiments, Geochimica et Cosmochimica Acta, 200:408--421, \doi{10.1016/j.gca.2016.05.027}.}
-\cvitem{2016}{Myhill, R. et al., On the P-T-\emph{f}O$_2$ stability of Fe$_4$O$_5$ and Fe$_5$O$_6$-rich phases: a thermodynamic and experimental study, Contributions to Mineralogy and Petrology, 171.5:1--11, \doi{10.1007/s00410-016-1258-4}.}
-\cvitem{2016}{Frost, D. J. and Myhill, R. Chemistry of the Lower Mantle, in ``Deep Earth'' (AGU Geophysical Monograph), 225--240, \doi{10.1002/9781118992487.ch18}.}
-\cvitem{2016}{Rassios, A. et al., Preserving the non-preservable geoheritage of the Aliakmon River: A case study in geo-education leading to cutting-edge science, Bulletin of the Geological Society of Greece, 50.}
-\cvitem{2016}{Ishii, T. et al., Generation of pressures over 40 GPa using Kawai-type multi-anvil apparatus with tungsten carbide anvils, Review of Scientific Instruments, 87:024501, \doi{10.1063/1.4941716}.}
-\cvitem{2015}{Wessel, P. et al. Semiautomatic fracture zone tracking, Geochemistry, Geophysics, Geosystems, \doi{10.1002/2015GC005853}.}
-\cvitem{2015}{Pamato, M. G., Myhill, R. et al. Lower mantle water reservoir implied by the extreme stability of a hydrous aluminosilicate, Nature Geoscience, 8:75--79, \doi{10.1038/ngeo2306}.}
-\cvitem{2013}{Myhill, R. Slab buckling and its effect on the distributions and focal mechanisms of deep-focus earthquakes, Geophysical Journal International, 192.2:837--853, \doi{10.1093/gji/ggs054}.}
-\cvitem{2012}{Myhill, R. and Warren, L. M. Fault plane orientations of deep earthquakes in the Izu-Bonin-Marianas subduction zone, Journal of Geophysical Research, 117:B06307, \doi{10.1029/2011JB009047}.}
-\cvitem{2011}{Myhill, R., McKenzie, D. and Priestley, K. The distribution of earthquake multiplets beneath the southwest Pacific, Earth and Planetary Science Letters, 301:87--97, \doi{10.1016/j.epsl.2010.10.023}.}
-\cvitem{2011}{Myhill, R. Constraints on evolution of the Mesohellenic Ophiolite from sub-ophiolitic metamorphic rocks, in Wakabayashi, J., and Dilek, Y., eds., M\'elanges: Processes of Formation and Societal Significance: Geological Society of America Special Paper 480:1--20, \doi{10.1130/2011.2480(03)}.}
-
-\section{Selected Presentations}
-\cvitem{2018}{Probing the structure and chemistry of Mars' deep interior: Prospects for NASA's InSight Mission. Invited seminar, Utrecht (November 2018)}
-\cvitem{2018}{Probing the structure and chemistry of Mars' deep interior: Prospects for NASA's InSight Mission. Invited seminar, Imperial College London (October 2018)}
-\cvitem{2018}{A brief guide to living on Mars. Invited talk and panel discussion, We the Curious, Bristol (October 2018)}
-\cvitem{2018}{Oxygen and sulphur in Mars' deep interior. Invited talk, Edinburgh, UK (September 2018)}
-\cvitem{2017}{Deep seismicity and the strength of subducting slabs: Rheological insights from geophysics. Invited seminar, Hefei, China.}
-\cvitem{2017}{High-pressure melting in the deep Earth. Guest lecture, Hefei, China.}
-\cvitem{2017}{Seismology on Mars: An Introduction to the InSight Mission. Guest lecture, Hefei, China.}
-\cvitem{2016}{Quenchable water-rich, aluminous post-stishovite: implications for seismic anomalies in the mid-mantle. Invited talk, American Geophysical Union Fall Meeting.}
-\cvitem{2016}{Determining the thermochemical structure of Mars from limited seismic data: potential insights for InSight. InSight Team Meeting, Toulouse, 2016}
-\cvitem{2015}{Water, water everywhere: H$_2$O in the deep mantle. Invited seminar, University of Bristol}
-\cvitem{2015}{Getting into deep water: H$_2$O in the Earth's mantle. Invited seminar, The Centre for Earth Evolution and Dynamics, Oslo.}
-\cvitem{2014}{Volatile-driven melting in the deep mantle. Invited seminar, St Louis University.}
-\cvitem{2014}{Ferric iron and its influence on Earth's deep structure. Oral presentation, Geological Society of London.}
-\cvitem{2011}{Fault plane orientations of deep earthquakes in the Izu-Bonin-Marianas subduction zone. Oral presentation, American Geophysical Union Fall Meeting.}
-\cvitem{2011}{Insights into deep earthquake mechanics. Invited seminar, Bayerisches Geoinstitut.}
-\cvitem{2010}{The search for structure: deep-focus earthquakes. Cambridge Earth Sciences Graduate Seminar.}
-\cvitem{2009}{Clustering of deep-focus earthquakes in the southwest Pacific. Poster presentation, American Geophysical Union Fall Meeting.}
-\cvitem{2008}{The significance of high temperature low pressure rocks beneath the Mesohellenic Ophiolite. Poster presentation, Greek Institute of Geology and Mineral Exploration (IGME) Field Symposium.}
-
-\clearpage
-\section{Skills}
-\begin{enumerate}[labelindent=5.2em,leftmargin=*,label=\listitemsymbol]
-\item Competent user of \href{http://www.latex-project.org/}{\LaTeX}, Microsoft and Serif Office programs.
-\item Competent in the C, C++ and Python programming languages, BASH and HTML scripting, and basic knowledge of FORTRAN and the OpenGL API.
-\item Experience in waveform modelling, including receiver function construction, directivity and focal mechanism analysis and relocation routines.
-\item Over 400 hours experience with \href{http:www.metamorph.geo.unimainz.de/thermocalc/}{THERMOCALC}, and a competent user of \href{http:www.perplex.ethz.ch/}{Perple\_X} thermodynamic software. Developer of the \href{https://geodynamics.org/cig/software/burnman/}{burnman} thermoelastic and thermodynamic toolkit.
-\item User of the \href{http:www.fenicsproject.org/}{FEniCS} finite element modelling software and the \href{https://geodynamics.org/cig/software/aspect/}{ASPECT} open-source geodynamics software.
 \end{enumerate}
 
-\section{Outreach and service to the profession}
-\cvitem{2018}{Scientific advisor to the collaborative art project \emph{Building a Martian House} (Panel discussion event: \url{https://www.wethecurious.org/event/building-a-martian-house})}
-\cvitem{2017}{User and code contributor to the open-source thermodynamics portal ENKI (\url{http://enki-portal.org/})}
-\cvitem{2015-2016}{Planetary Geology outreach for high school students, Imperial College London}
-\cvitem{2015}{Scientific outreach in geophysics and seismic hazard awareness with @Bristol science museum}
-%\cvitem{2015}{Associate Editor, American Mineralogist} 
-\cvitem{2014-}{Software developer for \emph{burnman}, an open-source mineral physics toolkit written in python (\url{http://geodynamics.org/cig/software/burnman/}).}
-\cvitem{2015-}{Code contributor for \emph{ASPECT}, open-source software for mantle convection written in C++ (\url{http://geodynamics.org/cig/software/aspect/}).}
-\cvitem{2014-}{Reviewer for \emph{Contributions to Mineralogy and Petrology}, \emph{Earth and Planetary Science Letters}, \emph{Geochemical Perspectives}, \emph{Minerals}, and \emph{The Journal of Mineralogical and Petrological Sciences}.}
-\cvitem{2012/15/16}{Session Convener, AGU Fall Meeting.}
-%\cvitem{2004-}{Scientific outreach related to the engineering and geological sciences (including part of the TimeTruck organising committee, conducting geological outreach at the University of Cambridge).}
+\subsubsection*{Submitted and accepted}
+\begin{enumerate}
+  \item Dahmen, N. et al., Resonances and Lander Modes observed by InSight on Mars, in revision, BSSA.
+  \item Dannberg, J., Myhill, R. et al., The morphology, evolution and seismic visibility of partial melt at the core-mantle boundary: Implications for ULVZs, in revision, Geophysical Journal International.
+  \item Beyer, C., Myhill, R. et al., A reversed redox gradient in the Earth's transition zone, in revision, EPSL.
+  \item Myhill, R. and Connolly, J., Notes on the creation and manipulation of solid solution models, in revision, Contributions to Mineralogy and Petrology, preprint available at \href{https://eartharxiv.org/fhwjy}{https://eartharxiv.org/fhwjy}.
+  \item Stott, A. et al., The site tilt and lander transfer function from the short period seismometer of InSight on Mars, submitted, BSSA.
+\end{enumerate}
 
-\section{Relevant Experience}
-\cvitem{06/07-01/08}{Master's Thesis, University of Cambridge. Metamorphic Development beneath the Mesohellenic Ophiolite. In this self-designed project, I used \href{http:www.metamorph.geo.unimainz.de/thermocalc/}{THERMOCALC} to interpret the mineral assemblages in samples collected from the amphibolite-granulite facies metamorphic soles of the Mesohellenic Ophiolite in Northern Greece. I obtained a high First (80\%) for this project. \emph{Advisor: Dr Timothy Holland, University of Cambridge}.}
-\cvitem{06/06-01/07}{Bachelor's Thesis, University of Cambridge. Independent mapping project and industrial work experience: Vourinos, Northern Greece. I obtained the top First in the year for this project (80\%). \emph{Advisors: Dr Alan Smith, University of Cambridge and Dr Anne Rassios, IGME}.}
-\cvitem{07/05-08/05}{Field geologist, British Geological Survey. Paid appointment for the Tellus Project, part of a national environmental survey completed in 2006. \emph{Advisors: Louise Ander, Sean Quigley, Sophia Passmore (British Geological Survey)}.}
-\cvitem{09/08}{Field demonstrator and member of the organising team, IGME Field Symposium: Ophiolites 2008.}
-\cvitem{2008--2012}{Supervisor in Stratigraphy, Structural Geology, Hydrosphere and Tectonics, and Demonstrator in Structural Geology, Tectonics and Seismology, University of Cambridge.}
-\cvitem{}{Demonstrator on Earth Sciences departmental field trips to Ketton, Arran, and Sedbergh.}
-%\cvitem{}{Guest field guide, University of K\"{o}ln}{}{Vourinos Ophiolite, Northern Greece}
-\cvitem{2005--2012}{Fieldwork experience. 250+ days (as of \today) as demonstrator, field guide, employee, researcher and student (Locations around the UK, Iceland and Greece).}
+\subsubsection*{Published peer-reviewed articles}
+\begin{enumerate}
+\item Lognonn\'e et al., 2020, Constraints on the shallow elastic and anelastic structure of Mars from InSight seismic data, Nat. Geosci. 13, 213--220 \doi{10.1038/s41561-020-0536-y}.
+\item Gassm{\"o}ller et al., 2020, On Formulations of Compressible Mantle Convection, Geophysical Journal International 221 (2), 1264-1280, \doi{10.1093/gji/ggaa078}.
+\item Panero et al., 2020, Dehydration Melting Below the Undersaturated Transition Zone, G-cubed. \doi{10.1029/2019GC008712}
+\item Sinmyo, R. et al., 2019, Effect of \ce{Fe^{3+}} on Phase Relations in the Lower Mantle: Implications for Redox Melting in Stagnant Slabs, JGR (Solid Earth), \doi{10.1029/2019JB017704}.
+\item Ishii, T. et al., 2019, Sharp 660-km discontinuity controlled by extremely narrow binary post-spinel transition, Nature Geoscience, 12:10, \doi{10.1038/s41561-019-0452-1}.
+\item Zhang, H. et al., 2019, Slab morphology and deformation beneath Izu-Bonin, Nature Communications, 10:1310, \doi{10.1038/s41467-019-09279-7}.
+\item Smrekar, S. et al., 2019, Pre-Mission InSights on the Interior of Mars, Space Science Reviews, 215:3, \doi{10.1007/s11214-018-0563-9}.
+\item Murdoch, N. et al., 2018, Flexible mode modelling of the InSight lander and consequences for the SEIS instrument, Space Science Reviews, 214:117, \doi{10.1007/s11214-018-0553-y}.
+\item Myhill, R. et al., 2018, Frequency dependence of seismic attenuation and coupling through Mars' regolith: implications for the InSight Mission, Space Science Reviews, 214:85, \doi{10.1007/s11214-018-0514-5}.
+\item Myhill, R., 2018, The elastic solid solution model for minerals at high pressures and temperatures, Contributions to Mineralogy and Petrology, 173:12, \doi{10.1007/s00410-017-1436-z}.
+\item Beyer, C. et al., 2018, An internally consistent pressure calibration of geobarometers applicable to the Earth's upper mantle using in situ XRD, Geochimica et Cosmochimica Acta, 222:421--435, \doi{10.1016/j.gca.2017.10.031}.
+\item Teanby, N. et al., 2017, Seismic Coupling of Short-Period Wind Noise Through Mars' Regolith for NASA's InSight Lander, Space Science Reviews, 211:485--500, \doi{10.1007/s11214-016-0310-z}.
+\item Dannberg, J. et al., 2017, The importance of grain size to mantle dynamics and seismological observations, G-cubed, 18.8:3034--3061, \doi{10.1002/2017GC006944}.
+\item Baron, M.A. et al., 2017, Experimental constraints on melting temperatures in the MgO-SiO$_2$ system at lower mantle pressures, Earth and Planetary Science Letters, 472:186--196, \doi{10.1016/j.epsl.2017.05.020}.
+\item Novella, D. et al., 2017, Melting phase relations in the systems Mg$_2$SiO$_4$-H$_2$O and MgSiO$_3$-H$_2$O at upper mantle conditions, Geochimica et Cosmochimica Acta, 204:68--82, \doi{10.1016/j.gca.2016.12.042}.
+\item Myhill, R. et al. 2017, Hydrous melting and partitioning in and above the mantle transition zone: insights from water-rich MgO-SiO$_2$-H$_2$O experiments, Geochimica et Cosmochimica Acta, 200:408--421, \doi{10.1016/j.gca.2016.05.027}.
+\item Myhill, R. et al., 2016, On the P-T-\emph{f}O$_2$ stability of Fe$_4$O$_5$ and Fe$_5$O$_6$-rich phases: a thermodynamic and experimental study, Contributions to Mineralogy and Petrology, 171.5:1--11, \doi{10.1007/s00410-016-1258-4}.
+ \item Ishii, T. et al., 2016, Generation of pressures over 40 GPa using Kawai-type multi-anvil apparatus with tungsten carbide anvils, Review of Scientific Instruments, 87:024501, \doi{10.1063/1.4941716}.
+ \item Rassios, A. et al., 2016, Preserving the non-preservable geoheritage of the Aliakmon River: A case study in geo-education leading to cutting-edge science, Bulletin of the Geological Society of Greece.
+\item  Wessel, P. et al., 2015, Semiautomatic fracture zone tracking, Geochemistry, Geophysics, Geosystems, \doi{10.1002/2015GC005853}.
+\item Pamato, M. G., Myhill, R. et al., 2015, Lower mantle water reservoir implied by the extreme stability of a hydrous aluminosilicate, Nature Geoscience, 8:75--79, \doi{10.1038/ngeo2306}.
+\item Myhill, R., 2013, Slab buckling and its effect on the distributions and focal mechanisms of deep-focus earthquakes, Geophysical Journal International, 192.2:837--853, \doi{10.1093/gji/ggs054}.
+\item Myhill, R. and Warren, L. M., 2012, Fault plane orientations of deep earthquakes in the Izu-Bonin-Marianas subduction zone, Journal of Geophysical Research, 117:B06307, \doi{10.1029/2011JB009047}.
+\item Myhill, R., McKenzie, D. and Priestley, K., 2011, The distribution of earthquake multiplets beneath the southwest Pacific, Earth and Planetary Science Letters, 301:87--97, \doi{10.1016/j.epsl.2010.10.023}.
+\item Myhill, R., 2011, Constraints on evolution of the Mesohellenic Ophiolite from sub-ophiolitic metamorphic rocks, in Wakabayashi, J., and Dilek, Y., eds., M\'elanges: Processes of Formation and Societal Significance: Geological Society of America Special Paper 480:1--20, \doi{10.1130/2011.2480(03)}.
+\end{enumerate}
 
-\section{Other Interests}
-\begin{enumerate}[labelindent=5.2em,leftmargin=*,label=\listitemsymbol]
+\subsubsection*{Published book chapters}
+\begin{enumerate}
+ \item Anglada-Escud\'{e}, G. et al., 2021, The N\"{u}wa Concept. A development model for a self-sustainable city on Mars \doi{10.13140/RG.2.2.29517.56803}.
+ \item Frost, D. J. and Myhill, R., 2016, Chemistry of the Lower Mantle, in ``Deep Earth'' (AGU Geophysical Monograph), 225--240, \doi{10.1002/9781118992487.ch18}.
+\end{enumerate}
+
+\subsubsection*{Book reviews}
+\begin{enumerate}
+\item Myhill, R. 2020, Thermodynamics in Earth and Planetary Sciences (Ganguly, J.). Elements 16 (3), 215-215
+\end{enumerate}
+
+\clearpage
+\subsection*{INVITED ORAL PRESENTATIONS}
+
+\vspace{-0.5em}
+\begin{table}[!ht]
+\centering
+\begin{tabular}{L{2cm} L{10cm} L{5cm}}
+  2019 \vfill & Iron disproportionation in the Earth's mantle transition zone & AGU Fall Meeting \vfill \\
+  2019 \vfill & Thermodynamic model creation: Prospects and challenges for performing MCMC inversions on multicomponent data & ENKI Workshop, \,\,\,\,\,\,\,\,\,Boulder, CO \\
+  2019 & Mars InSight: Geophysical investigations on another planet & University of Cambridge \\
+2018 \vfill & Probing the structure and chemistry of Mars' deep interior: Prospects for NASA's InSight Mission. & Utrecht \vfill \\
+2018 \vfill & Probing the structure and chemistry of Mars' deep interior: Prospects for NASA's InSight Mission. & Imperial College London \vfill \\
+2018 & A brief guide to living on Mars (talk and panel discussion). & We the Curious, Bristol \\
+2018 & Oxygen and sulphur in Mars' deep interior. & DCO meeting, Edinburgh \\
+2017 \vfill & Deep seismicity and the strength of subducting slabs: Rheological insights from geophysics. & Hefei, China \vfill \\
+2016 \vfill & Quenchable water-rich, aluminous post-stishovite: implications for seismic anomalies in the mid-mantle. & AGU Fall Meeting \vfill \\
+2016 \vfill & Determining the thermochemical structure of Mars from limited seismic data: potential insights for InSight. & InSight Team Meeting, Toulouse\\
+2015 & Water, water everywhere: H$_2$O in the deep mantle. & University of Bristol \\
+2015 & Getting into deep water: H$_2$O in the Earth's mantle. & CEED, Oslo \\
+2014 & Volatile-driven melting in the deep mantle. & St Louis University \\
+2011 & Insights into deep earthquake mechanics. & Bayerisches Geoinstitut \\
+2010 & The search for structure: deep-focus earthquakes. & University of Cambridge \\
+\end{tabular}
+\end{table}
+\vspace{-1.5em}
+
+\clearpage
+\subsection*{SELECTED OUTREACH ACTIVITIES}
+
+\vspace{-0.5em}
+\begin{table}[!h]
+\centering
+\begin{tabular}{L{2cm} L{13cm} L{2cm}}
+  2018--present \vfill & Scientific advisor to the collaborative art/engineering/science project \emph{Building a Martian House}. & \\
+  2019  & Invited Speaker, Stargazing Evening at Reepham, Norfolk \\
+  & Invited Speaker, West of England Geological Association \\
+   \vfill & Provided voice-over for an arts-science project on the past and future of space exploration based at Blickling Hall, Norfolk. & \\
+  2016 \vfill & Scientific outreach in geophysics and seismic hazard awareness with @Bristol (Bristol's science museum). & \\
+  2015--2016 \vfill & Planetary Geology outreach for the Global Summer School, Imperial College London. &
+\end{tabular}
+\end{table}
+\vspace{-1.5em}
+
+\subsection*{OTHER INTERESTS}
+\begin{itemize}
 \item Photography: I am a keen macro and landscape photographer.
-\item Climbing: I started rock climbing (mostly indoor) in July 2016.
-\item First Aid: I have been an active member of St John Ambulance for much of my life. I volunteered for about 400 hours per year during my PhD, primarily as first aider and Duties Coordinator of Cambridge LINKS (the student division of SJA) 2010--2012, and also as Stores Manager in 2011--2012. 
-\item Greek culture: I have enjoyed many happy months hiking and conducting fieldwork in Greece, and spent my final undergraduate year at undergraduate level studying Modern Greek.
-\end{enumerate}
+\item Climbing: I enjoy rock climbing (bouldering and lead-climbing).
+\item First Aid: I have been an active member of St John Ambulance for much of my life.
+\item Greek culture: I have enjoyed many happy months hiking and conducting fieldwork in Greece, and spent my final year at undergraduate level studying Modern Greek.
+\end{itemize}
 
-\clearpage
 \end{document}
